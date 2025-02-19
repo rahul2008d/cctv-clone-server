@@ -46,3 +46,9 @@ async def websocket_endpoint(websocket: WebSocket):
         if websocket.client_state == "connected":
             await websocket.close()
             print("WebSocket connection closed gracefully")
+
+# 🔹 Run FastAPI with SSL
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000, ssl_keyfile="C:\\WINDOWS\\system32\\private.key",
+            ssl_certfile="C:\\WINDOWS\\system32\\certificate.crt")
